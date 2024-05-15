@@ -39,7 +39,8 @@ typedef enum {
   EN_ELEVATION    = 0, //!< Elevation
   EN_BASEDEMAND   = 1, //!< Primary demand baseline value
   EN_PATTERN      = 2, //!< Primary demand time pattern index
-  EN_EMITTER      = 3, //!< Emitter flow coefficient
+  EN_FIXED_EMITTER   = 3, //!< Emitter flow coefficient for FIXED leaks
+  EN_UNFIXED_EMITTER = 33,//!< Emitter flow coefficient for UNFIXED leaks  
   EN_INITQUAL     = 4, //!< Initial quality
   EN_SOURCEQUAL   = 5, //!< Quality source strength
   EN_SOURCEPAT    = 6, //!< Quality source pattern index
@@ -65,7 +66,10 @@ typedef enum {
   EN_CANOVERFLOW  = 26, //!< Tank can overflow (= 1) or not (= 0)
   EN_DEMANDDEFICIT = 27,//!< Amount that full demand is reduced under PDA (read only)
   EN_NODE_INCONTROL = 28, //!< Is present in any simple or rule-based control (= 1) or not (= 0)
-  EN_EMITTERFLOW    = 29  //!< Current emitter flow (read only)
+  EN_CONSUMPTION     = 29, //!< Node Consumption
+  EN_TOTALLEAK       = 30, //!< Total emitter flows
+  EN_FIXEDLEAK       = 31, //!< Node FIXED emitter leaks
+  EN_UNFIXEDLEAK     = 32  //!< Node UNFIXED emitter leaks
 } EN_NodeProperty;
 
 /// Link properties
@@ -330,7 +334,8 @@ typedef enum {
   EN_TRIALS         = 0,  //!< Maximum trials allowed for hydraulic convergence
   EN_ACCURACY       = 1,  //!< Total normalized flow change for hydraulic convergence
   EN_TOLERANCE      = 2,  //!< Water quality tolerance
-  EN_EMITEXPON      = 3,  //!< Exponent in emitter discharge formula
+  EN_FIXED_EMITEXPON   = 3,  //!< Exponent in emitter discharge formula for FIXED leaks //khoshqalb
+  EN_UNFIXED_EMITEXPON = 27, //!< Exponent in emitter discharge formula for UNFIXED leaks //khoshqalb
   EN_DEMANDMULT     = 4,  //!< Global demand multiplier
   EN_HEADERROR      = 5,  //!< Maximum head loss error for hydraulic convergence
   EN_FLOWCHANGE     = 6,  //!< Maximum flow change for hydraulic convergence
